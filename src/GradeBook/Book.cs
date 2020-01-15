@@ -32,13 +32,6 @@ namespace GradeBook
             return result;
         }
 
-        public void PrintStatistics()
-         {
-
-           /* Console.WriteLine($"The average grade is {averageGrade:N1}");
-            Console.WriteLine($"The highest grade is {highGrade:N1}");
-            Console.WriteLine($"The lowest grade is {lowGrade:N1}");*/
-        }
 
         private List<double> grades;
         private string name;
