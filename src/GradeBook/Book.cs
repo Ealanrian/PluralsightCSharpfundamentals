@@ -10,6 +10,14 @@ namespace GradeBook
         {
             grades = new List<double>();
             Name = name;
+            category = "Science";
+        }
+
+        public Book (string name, string category)
+        {
+            grades = new List<double>();
+            Name = name;
+            this.category = category;
         }
 
         public void AddGrade(char letter)
@@ -97,24 +105,10 @@ namespace GradeBook
         
         public string Name
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if(!String.IsNullOrEmpty(value))
-                {
-                    name = value;
-                } else {
-                    throw new ArgumentException("invalid name");
-                }
-            }
-
+            get; 
+            private set;
         }
 
-        private string name;
-
-
+        readonly string category;
     }
 }
