@@ -6,7 +6,7 @@ namespace GradeBook
     public delegate void GradeAddedDelegate(Object sender, EventArgs args);
   
 
-    public class Book : NamedObject
+    public class Book : BookBase
     {
 
         public Book(string name) : base(name)
@@ -14,7 +14,7 @@ namespace GradeBook
             grades = new List<double>();
         }
 
-        public void AddGrade(char letter)
+        public override void AddGrade(char letter)
         {
 
             double grade = 0.0;
@@ -44,7 +44,7 @@ namespace GradeBook
             AddGrade(grade);
         }
 
-        public void AddGrade(double grade) 
+        public override void AddGrade(double grade) 
         {
             if(grade >= 0 && grade  <=100 )
             {
