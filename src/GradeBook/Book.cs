@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -12,7 +12,7 @@ namespace GradeBook
             Name = name;
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddGrade(char letter)
         {
 
             double grade = 0.0;
@@ -94,6 +94,27 @@ namespace GradeBook
 
 
         private List<double> grades;
-        public string Name;
+        
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if(!String.IsNullOrEmpty(value))
+                {
+                    name = value;
+                } else {
+                    throw new ArgumentException("invalid name");
+                }
+            }
+
+        }
+
+        private string name;
+
+
     }
 }
