@@ -26,7 +26,7 @@ namespace GradeBook.Tests
 
         string ReturnMessage1(String message) {
             count ++;
-            return message.ToLower;
+            return message.ToLower();
         }
 
         [Fact]
