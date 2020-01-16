@@ -10,7 +10,6 @@ namespace GradeBook
         {
             grades = new List<double>();
             Name = name;
-            category = "Science";
         }
 
         public Book (string name, string category)
@@ -105,7 +104,7 @@ namespace GradeBook
         public string Name
         {
             get; 
-            private set;
+            set;
         }
 
         public const string CATEGORY = "Science";

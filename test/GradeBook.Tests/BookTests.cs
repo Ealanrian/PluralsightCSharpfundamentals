@@ -24,21 +24,6 @@ namespace GradeBook.Tests
             Assert.Equal('B', result.Letter);
         }
 
-        [Fact]
-        public void TestInvalidAddGrade()
-        {
-            //arrange
-            Book book = new Book("grades");
-            book.AddGrade(10.0);
-            book.AddGrade(105.0);
-            book.AddGrade(-10.0);
-            
-            //act
-            var result = book.GetStatistics();
-
-            //assert
-            Assert.Equal(10.0, result.High); //105 should not be added
-            Assert.Equal(10.0,result.Low); // -10 should not be added
-        }
+       
     }
 }
