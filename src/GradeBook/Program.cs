@@ -8,15 +8,13 @@ namespace GradeBook
         static void Main(string[] args)
         {   
             var book = new Book("grade book");
+            book.GradeAdded += OnGradeAdded;
             System.Console.WriteLine("input grades, press enter after each grade, press q to finish");
-            var input = "";
-            var done = false;
-
-            while(!done) {
-                input = Console.ReadLine();
+            
+            while(true) {
+                var input = Console.ReadLine();
                 if (input.Equals("q")){
-                   done = true;
-                   continue;
+                   break;
                 } 
                 try 
                 {
@@ -35,6 +33,11 @@ namespace GradeBook
             Console.WriteLine($"The highest grade is {stats.High:N1}");
             Console.WriteLine($"The lowest grade is {stats.High:N1}");
             Console.WriteLine($"The letter grade is {stats.Letter}");
+        }
+
+        static void OnGradeAdded(Object sender, EventArgs e) 
+        {
+            Console.WriteLine("grade added");
         }
     }
 
